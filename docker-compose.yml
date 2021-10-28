@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: gunicorn /src/server:app --reload 
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
